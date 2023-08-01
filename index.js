@@ -48,6 +48,7 @@ io.on("connection", (socket) => {
 
    // Handle call requests
    socket.on('callUser', ({userToCall,signalData,from,name}) => {
+    console.log("Call received from",userToCall);
      io.to(userToCall).emit('calluser', { signal: signalData, from,name });
    });
  
@@ -62,9 +63,7 @@ io.on("connection", (socket) => {
     console.log("User disconnected:",socket.id);
     // else the socket will automatically try to reconnect
   });
-  socket.on('error', (error) => {
-    console.error(`Socket error: ${error}`);
-  });
+  
 });
 
 httpServer.listen(PORT, () => {
