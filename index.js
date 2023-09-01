@@ -3,7 +3,6 @@ const connectToMongo = require('./db');
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-// const { URLSearchParams } = require("url");
 require('dotenv').config();
 
 const app = express();
@@ -18,7 +17,7 @@ app.use('/api/auth', require('./routes/auth'));
 
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000"||"https://talk02me.netlify.app"],
     methods: ["GET", "POST"],
   },
 });

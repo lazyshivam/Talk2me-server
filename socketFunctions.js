@@ -44,7 +44,7 @@ const initializeSocket = (io) => {
           type:'alert'
       };
         delete users[socket.id];
-        socket.broadcast.emit("user-left", messageData);
+        socket.broadcast.emit("user_left", messageData);
         console.log("User disconnected:", socket.id);
       }
     });
