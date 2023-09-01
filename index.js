@@ -17,7 +17,7 @@ app.use('/api/auth', require('./routes/auth'));
 
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:3000"||"https://talk02me.netlify.app"],
+    origin: ["https://talk02me.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
