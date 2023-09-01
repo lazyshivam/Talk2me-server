@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const mongoURI=`${process.env.Mongo_URI}/VideoChatApp`;
+const mongoURI=`${process.env.Mongo_URI}`;
 
 //connecting with the mangodb database
 const connectToMongo= ()=>{
